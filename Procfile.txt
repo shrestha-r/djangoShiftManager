@@ -1,0 +1,1 @@
+web: gunicorn agency_manager.wsgi --log-file -
