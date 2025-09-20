@@ -51,12 +51,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'agency_manager.urls'
 
-# Database - Use environment variable for production
+
 DATABASES = {
     'default': dj_database_url.parse(
-        os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3')
+        os.environ.get(
+            'DATABASE_URL',
+            'postgresql://postgres:g4#G00gle@agencymanager.cf44guwymji8.eu-north-1.rds.amazonaws.com:5432/agencymanager'
+        )
     )
 }
+
 
 # Static files configuration
 STATIC_URL = '/static/'
