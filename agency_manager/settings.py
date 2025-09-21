@@ -36,6 +36,21 @@ INSTALLED_APPS = [
     'timesheets',
     'payroll',
 ]
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],          # adjust if you use a global templates dir
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # Add this
@@ -56,11 +71,7 @@ DATABASES = {
     'default': dj_database_url.parse(
         os.environ.get(
             'DATABASE_URL',
-<<<<<<< HEAD
-            "postgresql://postgres:g4%23G00gle@agencymanager.cf44guwymji8.eu-north-1.rds.amazonaws.com:5432/agencymanager",
-=======
-            'postgresql://postgres:g4#G00gle@agencymanager.cf44guwymji8.eu-north-1.rds.amazonaws.com:5432/agencymanager'
->>>>>>> 67f8103c542b87fc915d7e7cc57d4e4aa8877bb7
+            "postgresql://postgres:g4%23G00gle@agencymanager.cf44guwymji8.eu-north-1.rds.amazonaws.com:5432/agencymanager"
         )
     )
 }
